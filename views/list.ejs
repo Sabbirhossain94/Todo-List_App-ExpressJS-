@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="box" id="header">
+        <h1>Todo-List-App</h1>
+    </div>
+    <div class="box" id="date">
+        <h1>
+            <%= kindOfDay %>
+        </h1>
+    </div>
+</body>
+<form action="/" method="post">
+    <input type="text" name="newItem" placeholder="Add an Item..." required autocomplete="off">
+    <button type="submit" name="button">Add Todo</button>
+    <div class="box">
+
+        <% for (var i=0; i<newTodoItem.length ; i++) { %>
+            <div class="item">
+
+                <input type="checkbox">
+                <p>
+                    <%= newTodoItem[i] %>
+                </p>
+                
+            </div>
+            <% } %>
+
+    </div>
+
+</form>
+
+</html>

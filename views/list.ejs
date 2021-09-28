@@ -19,24 +19,24 @@
         </h1>
     </div>
 </body>
-<form action="/" method="post">
-    <input type="text" name="newItem" placeholder="Add an Item..." required autocomplete="off">
-    <button type="submit" name="button">Add Todo</button>
-    <div class="box">
-
-        <% for (var i=0; i<newTodoItem.length ; i++) { %>
+<div class="box">
+    <% newTodoItem.forEach(function(item){ %>
+        <form action="/delete" method="post">
             <div class="item">
-
-                <input type="checkbox">
+                <input type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()">
                 <p>
-                    <%= newTodoItem[i] %>
+                    <%= item.name %> 
                 </p>
-                
             </div>
-            <% } %>
+        </form>
+        <% }) %>
+            <form class="item" action="/" method="post">
+                <input type="text" name="newItem" placeholder="Add an Item..." required autocomplete="off">
+                <button type="submit" name="button">+</button>
+            </form>
+</div>
 
-    </div>
 
-</form>
-<footer>© todolist-v1 by Sabbir Hossain</footer>
+<footer>© todolist-v2</footer>
+
 </html>

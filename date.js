@@ -1,5 +1,4 @@
 
-
 module.exports.getDate = function(){
 
     let today = new Date();
@@ -11,4 +10,3 @@ module.exports.getDate = function(){
     let day = today.toLocaleDateString("en-US", options);
     return day;
 }
-
